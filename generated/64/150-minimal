@@ -41,15 +41,15 @@ fi
 
 # RELEASE VERSION ===============================================================
 ARCH=`uname -m`
-# SEARCH FOR THE CORRESPONDING 32bit ARCHITECTURE ===============================
+# SEARCH FOR THE CORRESPONDING 64bit ARCHITECTURE ===============================
 case "${ARCH}" in
-    x86_64*)    ARCH="x86";;
-    *)          OSNAME="UNKNOWN:${ARCH}"
+    x86*)    ARCH="x86_64";;
+    *)       OSNAME="UNKNOWN:${ARCH}"
 esac
 
 VERSION="150"
 FILES_URL="http://files.pharo.org/get-files/${VERSION}"
-IMAGE_FILE_NAME="pharoImage-${ARCH}"
+IMAGE_FILE_NAME="pharo-minimal-${ARCH}"
 
 
 # DOWNLOADING THE LATEST PHARO 150 IMAGE ========================================
@@ -113,10 +113,10 @@ HTML_HELP=<<HTML_HELP
 <h1>Pharo Zeroconf Script</h1>
 <p>This script downloads the latest Pharo 150 Image.</p>
 <h2>Usage</h2>
-<code>curl <a href="https://get.pharo.org/32/alpha">https://get.pharo.org/32/alpha</a> | bash </code>
+<code>curl <a href="https://get.pharo.org/64/150-minimal">https://get.pharo.org/64/150-minimal</a> | bash </code>
 <br/>
 or if <code>curl</code> is not available: </br>
-<code>wget -O- <a href="https://get.pharo.org/32/alpha">https://get.pharo.org/32/alpha</a> | bash </code>
+<code>wget -O- <a href="https://get.pharo.org/64/150-minimal">https://get.pharo.org/64/150-minimal</a> | bash </code>
 
 <h2>Artifacts</h2>
 <table><tr><td>Pharo.changes</td><td>A changes file for the Pharo Image</td></tr>
